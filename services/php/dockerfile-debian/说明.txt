@@ -1,0 +1,2 @@
+这个dockerfile的镜像基于php:x-fpm，不是alpine的，而是默认的debian
+比较大，扩展也比较全，大小1G多
