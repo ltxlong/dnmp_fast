@@ -25,7 +25,16 @@ fast版本和dnmp版本一样，php镜像默认是基于php:x-fpm-alpine（这�
 - docker-compose
 
 # Window环境依赖：
-Docker Desktop
+- Docker Desktop
+- 开启Hyper-V
+
+可能docker desktop启动不了，提示要更新wsl
+
+https://learn.microsoft.com/zh-cn/windows/wsl/install-manual
+
+做完第五步就够了
+
+重启电脑，启动docker desktop，可以正常启动了
 
 
 # 运行前要修改的配置：
