@@ -16,7 +16,9 @@ dnmp fast 版本
 # dnmp fast版本和dnmp版本的区别：
 fast版本的php扩展是离线安装的，不用再在线去下，在网络不好或者众所周知的原因，下载php扩展会很慢很卡
 
-fast版本和dnmp版本一样，php镜像默认是基于php:x-fpm-alpine，但fast版本额外提供了非alpine的选择php:x-fpm
+fast版本和dnmp版本一样，php镜像默认是基于php:x-fpm-alpine（这构建的镜像700M左右），并且fast版本额外提供了非alpine的选择php:x-fpm（这构建的镜像1G多）
+
+两个版本都可以自定义php和mysql的版本，默认是php7.4 和 mysql5.7
 
 # Linux环境依赖：
 - docker
@@ -112,10 +114,13 @@ phpstudy + docker desktop
 
 # 使用:
 1. 拉取本项目到本地
-2. 根据需要修改配置文件
-3. 切换到dnmp_fast目录下
-4. 执行docker-compose up -d
-> 第一次执行前，先pull所有的基础镜像，并且执行的是docker-compose up --build -d
+2. 根据需要修改各种配置文件
+3. 修改docker源为国内
+4. 切换到dnmp_fast目录下
+5. 执行docker-compose up -d
+> 如果是Linux环境要先安装docker和docker-compose
+> 若第一次执行，执行的是docker-compose up --build -d (如果是win的docker desktop，在执行前要先pull所有的基础镜像)
+> 若不是第一次执行，执行的是docker-compose up -d
 
 
 
