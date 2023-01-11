@@ -13,26 +13,26 @@ dnmp fast 版本
 
 ```
  
-# dnmp fast 版本和dnmp版本的区别：
+# dnmp fast版本和dnmp版本的区别：
 fast版本的php扩展是离线安装的，不用再在线去下，在网络不好或者众所周知的原因，下载php扩展会很慢很卡
 
 fast版本和dnmp版本一样，php镜像默认是基于php:x-fpm-alpine，但fast版本额外提供了非alpine的选择php:x-fpm
 
 # Linux环境依赖：
-docker
-docker-compose
+- docker
+- docker-compose
 
 # Window环境依赖：
 Docker Desktop
 
 
 # 运行前要修改的配置：
-1、php项目代码路径，在.env修改，默认是./www
-2、php.ini需不需要开启yasd扩展
-3、redis的密码设置（redis.conf）
-4、mysql的端口
-5、redis的端口
-6、其他配置，如nginx配置
+- php项目代码路径，在.env修改，默认是./www
+- php.ini需不需要开启yasd扩展
+- redis的密码设置（redis.conf）
+- mysql的端口
+- redis的端口
+- 其他配置，如nginx配置
 
 # docker一些命令
 ```
@@ -91,8 +91,11 @@ docker-compose down
 
 # 一个win本地成功实践：
 phpstudy + docker desktop
+
 用phpstudy配置运行一般的项目
+
 用docker配置运行swoole的项目
+
 - mysql和redis用phpstudy的，这个时候docker的mysql和redis端口要改下
 - phpstudy的nginx的端口也要改下
 - 所有的项目都放在phpstudy的www里，docker的项目目录指向phpstudy的www就行
@@ -102,8 +105,18 @@ phpstudy + docker desktop
 - phpstudy的redis记得设置bind的ip为0.0.0.0，不然也连接不上
 
 注意的是，docker desktop要先pull基础镜像，再执行docker-compose up --build -d，否则会执行失败
+
 这个问题是因为php镜像不是基础的镜像，而是加了很多的命令
+
 所以要先pull基础镜像，如docker pull php:7.4-fpm-alpine
+
+# 使用:
+1. 拉取本项目到本地
+2. 根据需要修改配置文件
+3. 切换到dnmp_fast目录下
+4. 执行docker-compose up -d
+> 第一次执行前，先pull所有的基础镜像，并且执行的是docker-compose up --build -d
+
 
 
 
