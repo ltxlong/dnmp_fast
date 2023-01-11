@@ -119,7 +119,9 @@ phpstudy + docker desktop
 4. 切换到dnmp_fast目录下
 5. 执行docker-compose up -d
 > 如果是Linux环境要先安装docker和docker-compose
+> 
 > 若第一次执行，执行的是docker-compose up --build -d (如果是win的docker desktop，在执行前要先pull所有的基础镜像)
+> 
 > 若不是第一次执行，执行的是docker-compose up -d
 
 
